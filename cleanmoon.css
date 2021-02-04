@@ -10,9 +10,11 @@ Use a better box model (opinionated).
 */
 
 *,
-*::before,
-*::after {
-	box-sizing: border-box;
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 /**
@@ -21,7 +23,8 @@ Use a more readable tab size (opinionated).
 
 :root {
 	-moz-tab-size: 4;
-	tab-size: 4;
+	-o-tab-size: 4;
+	   tab-size: 4;
 }
 
 /**
@@ -228,7 +231,8 @@ See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d4
 */
 
 :-moz-ui-invalid {
-	box-shadow: none;
+	-moz-box-shadow: none;
+	     box-shadow: none;
 }
 
 /**
