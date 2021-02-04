@@ -1,1 +1,17 @@
+/* Non-replaced elements */
 
+/* Hidden elements */
+[hidden], area, base, basefont, datalist, head, link, meta, noembed,
+noframes, param, rp, script, source, style, template, track, title {
+  display: none;
+}
+
+embed[hidden] { display: inline; height: 0; width: 0; } 
+
+input[type=hidden i] { display: none !important; }
+
+@media (scripting) {
+  noscript { display: none !important; }
+}
+
+/* The page */
