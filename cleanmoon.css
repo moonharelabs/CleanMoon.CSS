@@ -178,6 +178,7 @@ img {
 table {
 	text-indent: 0; /* 1 */
 	border-color: inherit; /* 2 */
+	border-collapse: collapse;
 }
 
 
@@ -375,4 +376,14 @@ summary {
 template,
 [hidden] {
   display: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
 }
