@@ -15,3 +15,43 @@ input[type=hidden i] { display: none !important; }
 }
 
 /* The page */
+html, body { display: block; }
+
+/* Flow content */
+address, blockquote, center, dialog, div, figure, figcaption, footer, form,
+header, hr, legend, listing, main, p, plaintext, pre, xmp {
+  display: block;
+}
+
+blockquote, figure, listing, p, plaintext, pre, xmp {
+  margin-block-start: 1em; margin-block-end: 1em;
+}
+
+blockquote, figure { margin-inline-start: 40px; margin-inline-end: 40px; }
+
+address { font-style: italic; }
+listing, plaintext, pre, xmp {
+  font-family: monospace; white-space: pre;
+}
+
+dialog:not([open]) { display: none; }
+dialog {
+  position: absolute;
+  inset-inline-start: 0; inset-inline-end: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  border: solid;
+  padding: 1em;
+  background: white;
+  color: black;
+}
+dialog::backdrop {
+  background: rgba(0,0,0,0.1);
+}
+
+slot {
+  display: contents;
+}
+
+pre[wrap] { white-space: pre-wrap; }
