@@ -1,7 +1,7 @@
-# normalize.css
+# CleanMoon.CSS
 
-<a href="https://github.com/necolas/normalize.css"><img
-  src="https://necolas.github.io/normalize.css/logo.svg" alt="Normalize Logo"
+<a href="#nolink"><img
+  src="https://github.com/MoonHareLabs/CleanMoon.CSS/raw/main/logo.svg" alt="CleanMoon Logo"
   width="80" height="80" align="right"></a>
 
 > A modern alternative to CSS resets
