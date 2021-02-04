@@ -27,12 +27,12 @@ Use a more readable tab size (opinionated).
 }
 
 /**
- * 1. Correct the line height in all browsers.
+ * 1. Better line height instead of 1.15. from MDN.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
 html {
-  line-height: 1.15; /* 1 */
+  line-height: 1.5; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -45,6 +45,8 @@ html {
 
 body {
   margin: 0;
+  font-family: inherit;
+  line-height: inherit;
 }
 
 /**
