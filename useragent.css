@@ -10,10 +10,6 @@ embed[hidden] { display: inline; height: 0; width: 0; }
 
 input[type=hidden i] { display: none !important; }
 
-@media (scripting) {
-  noscript { display: none !important; }
-}
-
 /* The page */
 html, body { display: block; }
 
@@ -24,10 +20,11 @@ header, hr, legend, listing, main, p, plaintext, pre, xmp {
 }
 
 blockquote, figure, listing, p, plaintext, pre, xmp {
-  margin-block-start: 1em; margin-block-end: 1em;
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em; -webkit-margin-after: 1em; margin-block-end: 1em;
 }
 
-blockquote, figure { margin-inline-start: 40px; margin-inline-end: 40px; }
+blockquote, figure { -webkit-margin-start: 40px; -moz-margin-start: 40px; margin-inline-start: 40px; -webkit-margin-end: 40px; -moz-margin-end: 40px; margin-inline-end: 40px; }
 
 address { font-style: italic; }
 listing, plaintext, pre, xmp {
@@ -38,13 +35,20 @@ dialog:not([open]) { display: none; }
 dialog {
   position: absolute;
   inset-inline-start: 0; inset-inline-end: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   margin: auto;
   border: solid;
   padding: 1em;
   background: white;
   color: black;
+}
+dialog::-webkit-backdrop {
+  background: rgba(0,0,0,0.1);
 }
 dialog::backdrop {
   background: rgba(0,0,0,0.1);
@@ -83,8 +87,8 @@ abbr[title], acronym[title] { text-decoration: dotted underline; }
 ins, u { text-decoration: underline; }
 del, s, strike { text-decoration: line-through; }
 
-q::before { content: open-quote; }
-q::after { content: close-quote; }
+q:before { content: open-quote; }
+q:after { content: close-quote; }
 
 br { display-outside: newline; } /* this also has bidi implications */
 nobr { white-space: nowrap; }
@@ -132,44 +136,45 @@ article, aside, h1, h2, h3, h4, h5, h6, hgroup, nav, section {
   display: block;
 }
 
-h1 { margin-block-start: 0.67em; margin-block-end: 0.67em; font-size: 2.00em; font-weight: bold; }
-h2 { margin-block-start: 0.83em; margin-block-end: 0.83em; font-size: 1.50em; font-weight: bold; }
-h3 { margin-block-start: 1.00em; margin-block-end: 1.00em; font-size: 1.17em; font-weight: bold; }
-h4 { margin-block-start: 1.33em; margin-block-end: 1.33em; font-size: 1.00em; font-weight: bold; }
-h5 { margin-block-start: 1.67em; margin-block-end: 1.67em; font-size: 0.83em; font-weight: bold; }
-h6 { margin-block-start: 2.33em; margin-block-end: 2.33em; font-size: 0.67em; font-weight: bold; }
+h1 { -webkit-margin-before: 0.67em; margin-block-start: 0.67em; -webkit-margin-after: 0.67em; margin-block-end: 0.67em; font-size: 2.00em; font-weight: bold; }
+h2 { -webkit-margin-before: 0.83em; margin-block-start: 0.83em; -webkit-margin-after: 0.83em; margin-block-end: 0.83em; font-size: 1.50em; font-weight: bold; }
+h3 { -webkit-margin-before: 1.00em; margin-block-start: 1.00em; -webkit-margin-after: 1.00em; margin-block-end: 1.00em; font-size: 1.17em; font-weight: bold; }
+h4 { -webkit-margin-before: 1.33em; margin-block-start: 1.33em; -webkit-margin-after: 1.33em; margin-block-end: 1.33em; font-size: 1.00em; font-weight: bold; }
+h5 { -webkit-margin-before: 1.67em; margin-block-start: 1.67em; -webkit-margin-after: 1.67em; margin-block-end: 1.67em; font-size: 0.83em; font-weight: bold; }
+h6 { -webkit-margin-before: 2.33em; margin-block-start: 2.33em; -webkit-margin-after: 2.33em; margin-block-end: 2.33em; font-size: 0.67em; font-weight: bold; }
 
-:is(article, aside, nav, section) h1 { margin-block-start: 0.83em; margin-block-end: 0.83em; font-size: 1.50em; }
-:is(article, aside, nav, section) :is(article, aside, nav, section) h1 { margin-block-start: 1.00em; margin-block-end: 1.00em; font-size: 1.17em; }
-:is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) h1 { margin-block-start: 1.33em; margin-block-end: 1.33em; font-size: 1.00em; }
-:is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) h1 { margin-block-start: 1.67em; margin-block-end: 1.67em; font-size: 0.83em; }
-:is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) h1 { margin-block-start: 2.33em; margin-block-end: 2.33em; font-size: 0.67em; }
+:is(article, aside, nav, section) h1 { -webkit-margin-before: 0.83em; margin-block-start: 0.83em; -webkit-margin-after: 0.83em; margin-block-end: 0.83em; font-size: 1.50em; }
+:is(article, aside, nav, section) :is(article, aside, nav, section) h1 { -webkit-margin-before: 1.00em; margin-block-start: 1.00em; -webkit-margin-after: 1.00em; margin-block-end: 1.00em; font-size: 1.17em; }
+:is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) h1 { -webkit-margin-before: 1.33em; margin-block-start: 1.33em; -webkit-margin-after: 1.33em; margin-block-end: 1.33em; font-size: 1.00em; }
+:is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) h1 { -webkit-margin-before: 1.67em; margin-block-start: 1.67em; -webkit-margin-after: 1.67em; margin-block-end: 1.67em; font-size: 0.83em; }
+:is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) h1 { -webkit-margin-before: 2.33em; margin-block-start: 2.33em; -webkit-margin-after: 2.33em; margin-block-end: 2.33em; font-size: 0.67em; }
 
-:is(article, aside, nav, section) hgroup > h1 ~ h2 { margin-block-start: 1.00em; margin-block-end: 1.00em; font-size: 1.17em; }
-:is(article, aside, nav, section) :is(article, aside, nav, section) hgroup > h1 ~ h2 { margin-block-start: 1.33em; margin-block-end: 1.33em; font-size: 1.00em; }
-:is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) hgroup > h1 ~ h2 { margin-block-start: 1.67em; margin-block-end: 1.67em; font-size: 0.83em; }
-:is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) hgroup > h1 ~ h2 { margin-block-start: 2.33em; margin-block-end: 2.33em; font-size: 0.67em; }
+:is(article, aside, nav, section) hgroup > h1 ~ h2 { -webkit-margin-before: 1.00em; margin-block-start: 1.00em; -webkit-margin-after: 1.00em; margin-block-end: 1.00em; font-size: 1.17em; }
+:is(article, aside, nav, section) :is(article, aside, nav, section) hgroup > h1 ~ h2 { -webkit-margin-before: 1.33em; margin-block-start: 1.33em; -webkit-margin-after: 1.33em; margin-block-end: 1.33em; font-size: 1.00em; }
+:is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) hgroup > h1 ~ h2 { -webkit-margin-before: 1.67em; margin-block-start: 1.67em; -webkit-margin-after: 1.67em; margin-block-end: 1.67em; font-size: 0.83em; }
+:is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) hgroup > h1 ~ h2 { -webkit-margin-before: 2.33em; margin-block-start: 2.33em; -webkit-margin-after: 2.33em; margin-block-end: 2.33em; font-size: 0.67em; }
 
-:is(article, aside, nav, section) hgroup > h1 ~ h3 { margin-block-start: 1.33em; margin-block-end: 1.33em; font-size: 1.00em; }
-:is(article, aside, nav, section) :is(article, aside, nav, section) hgroup > h1 ~ h3 { margin-block-start: 1.67em; margin-block-end: 1.67em; font-size: 0.83em; }
-:is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) hgroup > h1 ~ h3 { margin-block-start: 2.33em; margin-block-end: 2.33em; font-size: 0.67em; }
+:is(article, aside, nav, section) hgroup > h1 ~ h3 { -webkit-margin-before: 1.33em; margin-block-start: 1.33em; -webkit-margin-after: 1.33em; margin-block-end: 1.33em; font-size: 1.00em; }
+:is(article, aside, nav, section) :is(article, aside, nav, section) hgroup > h1 ~ h3 { -webkit-margin-before: 1.67em; margin-block-start: 1.67em; -webkit-margin-after: 1.67em; margin-block-end: 1.67em; font-size: 0.83em; }
+:is(article, aside, nav, section) :is(article, aside, nav, section) :is(article, aside, nav, section) hgroup > h1 ~ h3 { -webkit-margin-before: 2.33em; margin-block-start: 2.33em; -webkit-margin-after: 2.33em; margin-block-end: 2.33em; font-size: 0.67em; }
 
-:is(article, aside, nav, section) hgroup > h1 ~ h4 { margin-block-start: 1.67em; margin-block-end: 1.67em; font-size: 0.83em; }
-:is(article, aside, nav, section) :is(article, aside, nav, section) hgroup > h1 ~ h4 { margin-block-start: 2.33em; margin-block-end: 2.33em; font-size: 0.67em; }
+:is(article, aside, nav, section) hgroup > h1 ~ h4 { -webkit-margin-before: 1.67em; margin-block-start: 1.67em; -webkit-margin-after: 1.67em; margin-block-end: 1.67em; font-size: 0.83em; }
+:is(article, aside, nav, section) :is(article, aside, nav, section) hgroup > h1 ~ h4 { -webkit-margin-before: 2.33em; margin-block-start: 2.33em; -webkit-margin-after: 2.33em; margin-block-end: 2.33em; font-size: 0.67em; }
 
-:is(article, aside, nav, section) hgroup > h1 ~ h5 { margin-block-start: 2.33em; margin-block-end: 2.33em; font-size: 0.67em; }
+:is(article, aside, nav, section) hgroup > h1 ~ h5 { -webkit-margin-before: 2.33em; margin-block-start: 2.33em; -webkit-margin-after: 2.33em; margin-block-end: 2.33em; font-size: 0.67em; }
 
 dir, dd, dl, dt, menu, ol, ul { display: block; }
 li { display: list-item; }
 
-dir, dl, menu, ol, ul { margin-block-start: 1em; margin-block-end: 1em; }
+dir, dl, menu, ol, ul { -webkit-margin-before: 1em; margin-block-start: 1em; -webkit-margin-after: 1em; margin-block-end: 1em; }
 
 :is(dir, dl, menu, ol, ul) :is(dir, dl, menu, ol, ul) {
-  margin-block-start: 0; margin-block-end: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0; -webkit-margin-after: 0; margin-block-end: 0;
 }
 
-dd { margin-inline-start: 40px; }
-dir, menu, ol, ul { padding-inline-start: 40px; }
+dd { -webkit-margin-start: 40px; -moz-margin-start: 40px; margin-inline-start: 40px; }
+dir, menu, ol, ul { -webkit-padding-start: 40px; -moz-padding-start: 40px; padding-inline-start: 40px; }
 
 ol { list-style-type: decimal; }
 
@@ -209,7 +214,9 @@ tfoot[hidden], tr[hidden] {
 }
 
 table {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   border-spacing: 2px;
   border-collapse: separate;
   text-indent: initial;
@@ -252,7 +259,7 @@ table[rules=all i] > tfoot > tr > td, table[rules=all i] > tfoot > tr > th {
 
 table[align=left i] { float: left; }
 table[align=right i] { float: right; }
-table[align=center i] { margin-inline-start: auto; margin-inline-end: auto; }
+table[align=center i] { -webkit-margin-start: auto; -moz-margin-start: auto; margin-inline-start: auto; -webkit-margin-end: auto; -moz-margin-end: auto; margin-inline-end: auto; }
 thead[align=absmiddle i], tbody[align=absmiddle i], tfoot[align=absmiddle i],
 tr[align=absmiddle i], td[align=absmiddle i], th[align=absmiddle i] {
   text-align: center;
@@ -398,7 +405,9 @@ input:is([type=reset i], [type=button i], [type=submit i], [type=color i]), butt
 
 input:is([type=radio i], [type=checkbox i], [type=reset i], [type=button i],
 [type=submit i], [type=color i], [type=search i]), select, button {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 textarea { white-space: pre-wrap; }
@@ -407,10 +416,16 @@ hr {
   color: gray;
   border-style: inset;
   border-width: 1px;
-  margin-block-start: 0.5em;
-  margin-inline-end: auto;
-  margin-block-end: 0.5em;
-  margin-inline-start: auto;
+  -webkit-margin-before: 0.5em;
+          margin-block-start: 0.5em;
+  -webkit-margin-end: auto;
+     -moz-margin-end: auto;
+          margin-inline-end: auto;
+  -webkit-margin-after: 0.5em;
+          margin-block-end: 0.5em;
+  -webkit-margin-start: auto;
+     -moz-margin-start: auto;
+          margin-inline-start: auto;
   overflow: hidden;
 }
 
@@ -421,18 +436,32 @@ hr[color], hr[noshade] { border-style: solid; }
 
 fieldset {
   display: block;
-  margin-inline-start: 2px;
-  margin-inline-end: 2px;
+  -webkit-margin-start: 2px;
+     -moz-margin-start: 2px;
+          margin-inline-start: 2px;
+  -webkit-margin-end: 2px;
+     -moz-margin-end: 2px;
+          margin-inline-end: 2px;
   border: groove 2px ThreeDFace;
-  padding-block-start: 0.35em;
-  padding-inline-end: 0.75em;
-  padding-block-end: 0.625em;
-  padding-inline-start: 0.75em;
+  -webkit-padding-before: 0.35em;
+          padding-block-start: 0.35em;
+  -webkit-padding-end: 0.75em;
+     -moz-padding-end: 0.75em;
+          padding-inline-end: 0.75em;
+  -webkit-padding-after: 0.625em;
+          padding-block-end: 0.625em;
+  -webkit-padding-start: 0.75em;
+     -moz-padding-start: 0.75em;
+          padding-inline-start: 0.75em;
+  min-inline-size: -webkit-min-content;
+  min-inline-size: -moz-min-content;
   min-inline-size: min-content;
 }
 
 legend {
-  padding-inline-start: 2px; padding-inline-end: 2px;
+  -webkit-padding-start: 2px;
+     -moz-padding-start: 2px;
+          padding-inline-start: 2px; -webkit-padding-end: 2px; -moz-padding-end: 2px; padding-inline-end: 2px;
 }
 
 legend[align=left i] {
@@ -448,7 +477,7 @@ legend[align=right i] {
 }
 
 iframe { border: 2px inset; }
-video { object-fit: contain; }
+video { -o-object-fit: contain; object-fit: contain; }
 
 iframe[frameborder='0'], iframe[frameborder=no i] { border: none; }
 
@@ -502,4 +531,10 @@ details[open] > summary {
 marquee {
   display: inline-block;
   text-align: initial;
+}
+
+@media (scripting) {
+  noscript {
+    display: none !important;
+  }
 }
