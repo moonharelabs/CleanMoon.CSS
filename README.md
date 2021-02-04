@@ -14,16 +14,16 @@
 **NPM**
 
 ```sh
-npm install --save normalize.css
+npm install --save cleanmoon.css
 ```
 
 **CDN**
 
-See https://yarnpkg.com/en/package/normalize.css
+See *
 
 **Download**
 
-See https://necolas.github.io/normalize.css/latest/normalize.css
+See *
 
 
 ## What does it do?
@@ -47,7 +47,7 @@ See https://necolas.github.io/normalize.css/latest/normalize.css
 
 ## Extended details and known issues
 
-Additional detail and explanation of the esoteric parts of normalize.css.
+Additional detail and explanation of the esoteric parts of CleanMoon.css.
 
 #### `pre, code, kbd, samp`
 
@@ -94,9 +94,9 @@ contribution process easy and effective for everyone involved.
 
 [changelog-image]: https://img.shields.io/badge/changelog-md-blue.svg?style=flat-square
 [changelog-url]: CHANGELOG.md
-[license-image]: https://img.shields.io/npm/l/normalize.css.svg?style=flat-square
-[license-url]: LICENSE.md
-[npm-image]: https://img.shields.io/npm/v/normalize.css.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/normalize.css
-[gitter-image]: https://img.shields.io/badge/chat-gitter-blue.svg?style=flat-square
-[gitter-url]: https://gitter.im/necolas/normalize.css
+[license-image]: #nolink
+[license-url]: LICENSE
+[npm-image]: #nolink
+[npm-url]: #nolink
+[gitter-image]: #nolink
+[gitter-url]: #nolink
