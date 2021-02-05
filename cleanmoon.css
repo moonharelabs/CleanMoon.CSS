@@ -50,10 +50,10 @@ body {
 }
 
 /**
- * Render the `main` element consistently in IE.
+ * Render the elements consistently in IE.
  */
 
-main {
+aside, main, article, section, nav, figure, figcaption {
   display: block;
 }
 
