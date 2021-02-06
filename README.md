@@ -4,7 +4,7 @@
   src="https://github.com/MoonHareLabs/CleanMoon.CSS/raw/main/logo.svg" alt="CleanMoon Logo"
   width="80" height="80" align="right"></a>
 
-> A modern alternative to CSS resets
+Stylesheet to fix rendering problems of browsers with css.
 
 [![npm][npm-image]][npm-url] [![license][license-image]][license-url]
 [![changelog][changelog-image]][changelog-url]
