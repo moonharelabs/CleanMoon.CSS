@@ -71,16 +71,13 @@ h1 {
    ========================================================================== */
 
 /**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- * 3. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+ * 1. Show the overflow in Edge and IE.
+ * 2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-  color: inherit; /* 3 */
+  overflow: visible; /* 1 */
+  color: inherit; /* 2 */
 }
 
 /* Text-level semantics
